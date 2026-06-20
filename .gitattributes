@@ -12,3 +12,5 @@ CONTRIBUTING.md linguist-documentation=true
 examples/code/** linguist-detectable=true
 examples/code/**/*.js linguist-language=JavaScript
 examples/code/**/*.ts linguist-language=TypeScript
+src-public/** linguist-detectable=true
+src-public/**/*.ts linguist-language=TypeScript
