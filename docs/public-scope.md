@@ -3,26 +3,28 @@
 ## Included In This Repository
 
 This public repository includes:
-- a product-level description of the workflow
-- high-level architecture and security summaries
-- ownership and usage notice documents
-- guidance for publishing this public showcase as a separate repository
 
-## Intentionally Excluded
+- high-level workflow documentation
+- component and boundary descriptions
+- example contract shapes with placeholder values
+- a recommended public blueprint structure
+- ownership and security-facing repository metadata
+
+## Excluded From This Repository
 
 This repository does not include:
-- backend implementation source
-- desktop application implementation source
-- internal release automation
-- binaries, packaged runtime files, or dependency payloads
-- production configuration, sessions, tokens, secrets, or webhook details
-- customer data and real document samples
 
-## Purpose Of This Public Version
+- private implementation source
+- workstation runtime packages
+- private automation scripts
+- internal release logic
+- production identifiers
+- sessions, secrets, or credentials
+- real operational records
+- customer or production documents
 
-This version exists to:
-- present the project publicly without exposing private implementation details
-- communicate the problem space and solution framing
-- establish ownership and usage restrictions
+## Publication Rule Of Thumb
 
-It is not intended to function as a full implementation repository for third-party deployment.
+If a file answers **how the product is implemented internally**, it probably does not belong here.
+
+If a file answers **what the product does, how it is bounded, and what a partner or reviewer needs to understand**, it is a better fit for this public repository.

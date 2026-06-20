@@ -1,0 +1,24 @@
+.
+|-- README.md
+|-- LICENSE
+|-- NOTICE
+|-- SECURITY.md
+|-- CONTRIBUTING.md
+|-- docs/
+|   |-- overview.md
+|   |-- workflow.md
+|   |-- architecture.md
+|   |-- security.md
+|   |-- public-scope.md
+|   |-- repository-structure.md
+|   |-- release-surface.md
+|   `-- faq.md
+|-- examples/
+|   `-- contracts/
+|       |-- certification-job.example.json
+|       |-- signing-session.example.json
+|       `-- result-record.example.json
+|-- reference/
+|   `-- glossary.md
+`-- templates/
+    `-- public-showcase-tree.txt

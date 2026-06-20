@@ -1,45 +1,70 @@
 # Architecture
 
-## High-Level Flow
+## System Boundary
 
-1. An operator activates a temporary working link from the desktop application.
-2. The desktop application starts the local backend and manages the public tunnel.
-3. The active sheet endpoint is updated through an Apps Script webhook.
-4. Operators submit source PDFs from the Google Sheet workflow.
-5. Apps Script sends processing requests to the PDF backend.
-6. The backend stamps the PDF and prepares digital signature fields.
-7. The processed PDF is returned to the document handling flow.
+This repository describes the system at the role and boundary level only.
 
-## Main Components
+The workflow is split into the following public-safe components:
 
-### Desktop Application
+### 1. Operator Console
 
-The desktop application acts as the operational control point. It is responsible for:
-- managing the active working link
-- starting and stopping the backend
-- updating the sheet endpoint
-- monitoring tunnel and backend state
+The operator console is the human control surface for the workflow.
 
-### PDF Backend Service
+Responsibilities:
 
-The backend service is responsible for:
-- receiving PDF payloads
-- validating request inputs
-- applying certification text and overlays
-- preparing digital signature fields
-- returning processed PDFs
+- start or stop an active work session
+- expose a temporary processing route only when needed
+- monitor local runtime state
+- coordinate access to the signing step
 
-### Google Sheets And Apps Script
+### 2. Local Processing Runtime
 
-The spreadsheet layer is responsible for:
-- intake and operator interaction
-- collecting certification metadata
-- triggering processing requests
-- writing output links back into the working sheet
+The local processing runtime handles document transformation.
 
-## Design Principles
+Responsibilities:
 
-- the desktop app remains the operator control surface
-- the PDF backend runs locally
-- public exposure is temporary and scoped to active usage
-- sensitive operational values should not live in normal spreadsheet cells
+- accept a document-processing job
+- validate job metadata
+- apply certification content and placement rules
+- prepare the document for downstream signing
+- return the processed output
+
+### 3. Intake Workspace
+
+The intake workspace is the business-facing queue or operator sheet.
+
+Responsibilities:
+
+- collect job metadata
+- track job state
+- trigger processing requests
+- store output links or returned artifacts
+
+### 4. Signing Workspace
+
+The signing workspace is the final operator-facing environment where prepared documents can be signed in a controlled manner.
+
+Responsibilities:
+
+- load prepared documents
+- allow signature placement or use pre-detected signature targets
+- perform final signing actions
+- export or return the signed result
+
+## High-Level Sequence
+
+1. The operator opens a controlled session.
+2. The system enables a temporary route for intake requests.
+3. The intake workspace submits a document job.
+4. The local runtime generates the certified PDF result.
+5. The result enters the signing workspace when a signature is required.
+6. The operator signs the required target or targets.
+7. The final artifact is exported back into the workflow record.
+
+## Architecture Principles
+
+- operator control should remain explicit
+- document processing should stay local to the controlled workstation
+- public exposure should be temporary and session-bound
+- business metadata and runtime secrets should remain separated
+- the public repository should describe boundaries, not private mechanics

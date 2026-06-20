@@ -1,0 +1,18 @@
+{
+  "jobId": "job_demo_2026_001",
+  "documentName": "sample-certified-copy.pdf",
+  "sourceDocumentRef": "file_placeholder_001",
+  "certification": {
+    "referenceNumber": "REF-2026-001",
+    "bookNumber": "BOOK-01",
+    "issuedDate": "2026-06-20"
+  },
+  "outputMode": "certified-copy",
+  "signingRequired": true,
+  "returnMode": "workflow-record",
+  "metadata": {
+    "queueRowRef": "row_placeholder_001",
+    "operatorRef": "operator_placeholder",
+    "tenantRef": "tenant_placeholder"
+  }
+}

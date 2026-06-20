@@ -1,0 +1,13 @@
+{
+  "jobId": "job_demo_2026_001",
+  "status": "completed",
+  "result": {
+    "artifactRef": "signed_output_placeholder",
+    "outputType": "signed-certified-pdf",
+    "completedAt": "2026-06-20T14:30:00Z"
+  },
+  "tracking": {
+    "queueRowRef": "row_placeholder_001",
+    "sessionId": "session_demo_2026_001"
+  }
+}

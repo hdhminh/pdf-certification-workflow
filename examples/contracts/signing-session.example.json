@@ -1,0 +1,17 @@
+{
+  "sessionId": "session_demo_2026_001",
+  "documentRef": "prepared_document_placeholder",
+  "signingTargets": [
+    {
+      "name": "enterprise_signature",
+      "required": true
+    },
+    {
+      "name": "personal_signature",
+      "required": false
+    }
+  ],
+  "exportMode": "manual-finalize",
+  "returnMode": "workflow-record",
+  "status": "ready"
+}

@@ -1,29 +1,43 @@
 # Project Overview
 
-## Problem Space
-
-This project targets a PDF certification workflow in an environment where scanned documents are the dominant input type and operators need a fast, repeatable way to produce certified digital copies.
-
-The workflow must support:
-- certification text placement on the output PDF
-- preparation of digital signature fields
-- spreadsheet-driven intake and tracking
-- practical processing of scan-heavy document sets
-
 ## Product Intent
 
-The system was designed to reduce repetitive manual work while keeping the operator workflow simple.
+This workflow exists for organizations that need to convert document-review work into a repeatable, operator-controlled digital process.
 
-At a high level, the product aims to:
-- automate certified PDF copy generation
-- standardize output placement across document variations
-- connect local document processing with lightweight operational tooling
-- keep day-to-day processing centered around a spreadsheet queue
+The core problem is not simply stamping a PDF. The broader need is to:
 
-## Operating Model
+- intake document jobs consistently
+- generate certified output with controlled placement rules
+- route documents into a signing stage when required
+- keep operators in control of what is exposed, when, and for how long
+- return the output into the surrounding business process
 
-The project is built around an internal operator model:
-- a desktop application controls the active working session
-- a local backend performs PDF processing
-- Google Sheets and Apps Script provide the intake layer
-- temporary public exposure is used only for controlled request handling
+## Product Model
+
+At a public-safe level, the product can be understood as four coordinated layers:
+
+1. an operator control surface
+2. a local document-processing runtime
+3. an intake and tracking workspace
+4. a signing workspace for final execution
+
+The implementation behind those layers remains private in the original product repository.
+
+## Supported Outcomes
+
+The workflow is designed to support:
+
+- certified-copy preparation from scanned originals
+- standardized output placement across variable PDF inputs
+- preparation of enterprise and personal signing targets
+- controlled final signing by an operator
+- operational traceability through a queue or tracking sheet
+
+## Why A Public Blueprint Instead Of Public Source
+
+The product is maintained as a private implementation. This public repository exists so that:
+
+- product direction can be explained clearly
+- partners or reviewers can understand system boundaries
+- ownership can be established publicly
+- no internal runtime logic or deployment details need to be disclosed

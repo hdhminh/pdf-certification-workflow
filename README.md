@@ -1,54 +1,96 @@
 # PDF Certification Workflow
 
-A public-facing showcase of the `pdf-merge-service` project.
+Public blueprint for a controlled PDF certification and digital-signing workflow.
 
-This repository is intentionally limited to product-level documentation. It describes the workflow, system boundaries, and security direction without publishing the private implementation, deployment pipeline, or runtime assets.
+This repository is intentionally designed as a public-safe project surface. It explains product scope, workflow design, integration boundaries, sample contracts, and release posture without exposing private source code, internal runtime assets, or implementation-specific operational details.
 
-## Overview
+## What This Repository Represents
 
-`pdf-merge-service` was designed for a certification workflow where teams need to process scan-heavy document sets, generate certified PDF copies, and prepare files for digital signing in a controlled operational flow.
+This repository documents a production-oriented workflow for:
 
-The project combines:
-- a Windows desktop control app
-- a local PDF processing backend
-- Google Sheets and Apps Script for operator intake
-- temporary public exposure for controlled processing requests
+- generating certified PDF copies from scanned or mixed-source documents
+- preparing documents for controlled digital signing
+- coordinating operator intake through a queue-based workspace
+- returning processed files back into an operational tracking flow
 
-## What The Product Supports
+It is not a deployable application repository.
 
-- certification copy generation from scanned original documents
-- placement of certification text on the final output page
-- preparation of digital signature fields for organization and personal signing
-- spreadsheet-based intake and operator workflow
-- temporary and controlled public access for processing requests
+## Public-Safe Scope
 
-## Why This Public Repository Exists
+Included here:
 
-This repository exists to:
-- present the project in a public-safe format
-- document the workflow and architectural intent
-- describe the security direction at a high level
-- establish ownership and usage restrictions
+- product and workflow documentation
+- architecture and trust-boundary summaries
+- sample request and response contracts
+- a model public repository structure for private-software showcase projects
+- ownership, usage, and disclosure guidance
 
-This repository does **not** include:
-- backend source code
-- desktop application source code
-- internal automation or release pipeline details
-- production configuration, webhook values, sessions, or secrets
-- customer data or real document payloads
+Intentionally excluded:
 
-## Documentation
+- backend implementation source
+- desktop application implementation source
+- internal signing bridge or local runtime source
+- internal deployment scripts and release secrets
+- production endpoints, webhook values, sessions, credentials, or tenant data
+- customer files, real queue records, or live operational payloads
 
-The public documentation set is available in `docs/`:
-- [Project Overview](docs/overview.md)
-- [Architecture](docs/architecture.md)
-- [Security Model](docs/security.md)
-- [Public Scope](docs/public-scope.md)
-- [Publishing Guide](docs/publish.md)
+## Repository Map
+
+- [`docs/overview.md`](docs/overview.md): product intent and workflow context
+- [`docs/workflow.md`](docs/workflow.md): operator flow from intake to signed output
+- [`docs/architecture.md`](docs/architecture.md): system boundaries and component roles
+- [`docs/security.md`](docs/security.md): trust model and exposure controls
+- [`docs/public-scope.md`](docs/public-scope.md): what may and may not be published
+- [`docs/repository-structure.md`](docs/repository-structure.md): recommended public blueprint layout
+- [`docs/release-surface.md`](docs/release-surface.md): what a public release surface may contain
+- [`docs/faq.md`](docs/faq.md): short answers for reviewers and stakeholders
+- [`examples/`](examples/README.md): sanitized example contracts and payload shapes
+- [`reference/`](reference/README.md): glossary and publishing notes
+- [`templates/`](templates/README.md): reusable structure patterns for similar public repos
+
+## Product Capabilities
+
+At a public-safe level, the workflow supports:
+
+- certification copy generation for document-heavy operations
+- placement of certification content in a standardized output area
+- preparation of one or more digital-signature targets
+- operator-controlled signing sessions
+- queue-based intake and output tracking
+- controlled return of processed files into the business workflow
+
+## High-Level Workflow
+
+1. An operator opens a work session from a local control surface.
+2. A temporary processing route becomes available for the active session only.
+3. An intake workspace submits a document and job metadata.
+4. The local processing runtime generates a certified PDF output.
+5. The document enters a signing step when signing is required.
+6. The operator signs one or more designated signature targets.
+7. The final file is exported and linked back to the operational record.
+
+See [`docs/workflow.md`](docs/workflow.md) for the fuller public version.
+
+## Why This Repository Exists
+
+This repository exists to solve a common problem for private software teams:
+
+- the product needs a public face
+- the implementation must stay private
+- stakeholders still need something concrete to review
+
+The result is a repository that is structured, reviewable, and informative without becoming a source-code mirror.
+
+## Suggested GitHub Description
+
+Suggested repository description:
+
+> Public blueprint for a controlled PDF certification and digital-signing workflow, including architecture, contracts, and security boundaries without exposing private implementation.
 
 ## Ownership And Usage
 
-- See [LICENSE](LICENSE)
-- See [NOTICE](NOTICE)
+- See [`LICENSE`](LICENSE)
+- See [`NOTICE`](NOTICE)
+- See [`SECURITY.md`](SECURITY.md)
 
-All rights, ownership, redistribution, commercial use, and derivative usage remain governed by the repository license and notice documents.
+All rights, ownership, redistribution, and derivative usage remain governed by the repository license and notice documents.
