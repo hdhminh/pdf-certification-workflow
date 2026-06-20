@@ -23,6 +23,7 @@ Included here:
 - product and workflow documentation
 - architecture and trust-boundary summaries
 - sample request and response contracts
+- sample code snippets for intake, processing orchestration, and signing flow
 - a model public repository structure for private-software showcase projects
 - ownership, usage, and disclosure guidance
 
@@ -45,7 +46,7 @@ Intentionally excluded:
 - [`docs/repository-structure.md`](docs/repository-structure.md): recommended public blueprint layout
 - [`docs/release-surface.md`](docs/release-surface.md): what a public release surface may contain
 - [`docs/faq.md`](docs/faq.md): short answers for reviewers and stakeholders
-- [`examples/`](examples/README.md): sanitized example contracts and payload shapes
+- [`examples/`](examples/README.md): sanitized contracts and code samples
 - [`reference/`](reference/README.md): glossary and publishing notes
 - [`templates/`](templates/README.md): reusable structure patterns for similar public repos
 
@@ -84,6 +85,16 @@ This repository exists to solve a common problem for private software teams:
 - stakeholders still need something concrete to review
 
 The result is a repository that is structured, reviewable, and informative without becoming a source-code mirror.
+
+## Code Samples
+
+This repository now includes public-safe sample code in [`examples/code/`](examples/code/README.md).
+
+These files are intentionally illustrative rather than production-ready. They show:
+
+- how an intake layer can prepare a processing request
+- how a browser signing page can coordinate with a local signing bridge
+- how a workflow state model can be represented in code
 
 ## Suggested GitHub Description
 
