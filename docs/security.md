@@ -9,6 +9,7 @@ This document describes security direction, not implementation detail.
 - prevent long-lived exposure of active work sessions
 - separate business-facing intake records from sensitive runtime control
 - minimize the data retained outside the active operator workflow
+- keep certificate-based signing execution anchored to the local operator environment
 
 ## Trust Boundaries
 
@@ -26,6 +27,8 @@ This route should be:
 - scoped to valid workflow requests
 - removable immediately by the operator
 - short-lived by default
+
+The browser-based signing surface may participate in this zone, but signing execution itself should still remain constrained by the local operator environment.
 
 ### Business Workspace Zone
 
@@ -47,6 +50,7 @@ This repository should never publish:
 - secret names or values
 - live operational endpoints
 - implementation-specific auth or validation logic
+- local signing bridge internals
 - real customer examples
 
 ## Practical Security Posture
@@ -58,3 +62,4 @@ No workflow with a temporary public-facing step can be treated as risk-free. The
 - keep sensitive logic private
 - keep operator control explicit
 - make shutdown or session cancelation decisive
+- avoid turning local signing execution into a broadly reusable public mechanism

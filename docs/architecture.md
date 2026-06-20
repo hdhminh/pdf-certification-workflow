@@ -16,6 +16,7 @@ Responsibilities:
 - expose a temporary processing route only when needed
 - monitor local runtime state
 - coordinate access to the signing step
+- provide the local control boundary for certificate-based signing
 
 ### 2. Local Processing Runtime
 
@@ -29,7 +30,18 @@ Responsibilities:
 - prepare the document for downstream signing
 - return the processed output
 
-### 3. Intake Workspace
+### 3. Local Signing Bridge
+
+The local signing bridge supports browser-based signing without moving private signing operations into a fully public service.
+
+Responsibilities:
+
+- expose a local-only signing interface to the browser signing surface
+- coordinate certificate-based signing actions under operator control
+- limit the signing path to the active local session
+- keep signing execution tied to the operator workstation
+
+### 4. Intake Workspace
 
 The intake workspace is the business-facing queue or operator sheet.
 
@@ -40,9 +52,9 @@ Responsibilities:
 - trigger processing requests
 - store output links or returned artifacts
 
-### 4. Signing Workspace
+### 5. Signing Workspace
 
-The signing workspace is the final operator-facing environment where prepared documents can be signed in a controlled manner.
+The signing workspace is the browser-facing environment where prepared documents can be signed in a controlled manner.
 
 Responsibilities:
 
@@ -58,13 +70,14 @@ Responsibilities:
 3. The intake workspace submits a document job.
 4. The local runtime generates the certified PDF result.
 5. The result enters the signing workspace when a signature is required.
-6. The operator signs the required target or targets.
+6. The operator signs the required target or targets through the local signing bridge.
 7. The final artifact is exported back into the workflow record.
 
 ## Architecture Principles
 
 - operator control should remain explicit
 - document processing should stay local to the controlled workstation
+- signing execution should remain tied to the controlled workstation even when the signing UI is browser-based
 - public exposure should be temporary and session-bound
 - business metadata and runtime secrets should remain separated
 - the public repository should describe boundaries, not private mechanics

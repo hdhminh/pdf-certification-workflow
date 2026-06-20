@@ -8,7 +8,7 @@ The core problem is not simply stamping a PDF. The broader need is to:
 
 - intake document jobs consistently
 - generate certified output with controlled placement rules
-- route documents into a signing stage when required
+- route documents into a browser-based signing stage when required
 - keep operators in control of what is exposed, when, and for how long
 - return the output into the surrounding business process
 
@@ -30,7 +30,8 @@ The workflow is designed to support:
 - certified-copy preparation from scanned originals
 - standardized output placement across variable PDF inputs
 - preparation of enterprise and personal signing targets
-- controlled final signing by an operator
+- controlled final signing by an operator through a web signing surface
+- local desktop-assisted signing sessions for real certificate execution
 - operational traceability through a queue or tracking sheet
 
 ## Why A Public Blueprint Instead Of Public Source

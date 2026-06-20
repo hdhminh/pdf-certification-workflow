@@ -1,6 +1,6 @@
 # PDF Certification Workflow
 
-Public blueprint for a controlled PDF certification and digital-signing workflow.
+Public blueprint for a controlled PDF certification, web-based signing, and operator-managed document workflow.
 
 This repository is intentionally designed as a public-safe project surface. It explains product scope, workflow design, integration boundaries, sample contracts, and release posture without exposing private source code, internal runtime assets, or implementation-specific operational details.
 
@@ -9,7 +9,8 @@ This repository is intentionally designed as a public-safe project surface. It e
 This repository documents a production-oriented workflow for:
 
 - generating certified PDF copies from scanned or mixed-source documents
-- preparing documents for controlled digital signing
+- running browser-based signing sessions for prepared PDFs
+- coordinating desktop-assisted digital signing with local operator control
 - coordinating operator intake through a queue-based workspace
 - returning processed files back into an operational tracking flow
 
@@ -55,18 +56,21 @@ At a public-safe level, the workflow supports:
 - certification copy generation for document-heavy operations
 - placement of certification content in a standardized output area
 - preparation of one or more digital-signature targets
-- operator-controlled signing sessions
+- browser-based signing for prepared documents
+- operator-controlled signing sessions with local desktop assistance
+- support for single-signature or multi-signature completion
 - queue-based intake and output tracking
 - controlled return of processed files into the business workflow
+- distinct operator flows for certification-copy work and signing work
 
 ## High-Level Workflow
 
 1. An operator opens a work session from a local control surface.
 2. A temporary processing route becomes available for the active session only.
 3. An intake workspace submits a document and job metadata.
-4. The local processing runtime generates a certified PDF output.
-5. The document enters a signing step when signing is required.
-6. The operator signs one or more designated signature targets.
+4. The local processing runtime generates a certified PDF output and prepares signing targets when needed.
+5. The document enters a browser-based signing step when signing is required.
+6. The operator signs one or more designated signature targets with the help of the local desktop-controlled signing bridge.
 7. The final file is exported and linked back to the operational record.
 
 See [`docs/workflow.md`](docs/workflow.md) for the fuller public version.
@@ -85,7 +89,7 @@ The result is a repository that is structured, reviewable, and informative witho
 
 Suggested repository description:
 
-> Public blueprint for a controlled PDF certification and digital-signing workflow, including architecture, contracts, and security boundaries without exposing private implementation.
+> Public blueprint for a controlled PDF certification and web-signing workflow, including architecture, contracts, and security boundaries without exposing private implementation.
 
 ## Ownership And Usage
 

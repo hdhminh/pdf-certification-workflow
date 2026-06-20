@@ -1,6 +1,8 @@
 {
   "sessionId": "session_demo_2026_001",
   "documentRef": "prepared_document_placeholder",
+  "surface": "web-signing",
+  "desktopAssisted": true,
   "signingTargets": [
     {
       "name": "enterprise_signature",
