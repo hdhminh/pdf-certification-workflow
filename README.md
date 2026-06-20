@@ -14,7 +14,7 @@ This is a public-safe repository. It contains documentation, sample contracts, a
 ## Repository Map
 
 - [`examples/code/`](examples/code/README.md): public-safe code samples
-- [`src-public/`](src-public/README.md): public-safe reference skeleton in TypeScript
+- [`src/`](src/README.md): public-safe reference skeleton in TypeScript
 - [`examples/contracts/`](examples/contracts/certification-job.example.json): sanitized payload shapes
 - [`docs/overview.md`](docs/overview.md): product intent and workflow context
 - [`docs/workflow.md`](docs/workflow.md): operator flow from intake to signed output
@@ -49,7 +49,7 @@ The code samples in [`examples/code/`](examples/code/README.md) illustrate:
 - how a browser signing page can coordinate with a local signing bridge
 - how workflow state and session rules can be represented in code
 
-For a larger code-oriented public reference, see [`src-public/`](src-public/README.md).
+For a larger code-oriented public reference, see [`src/`](src/README.md).
 
 See [`docs/workflow.md`](docs/workflow.md) for the end-to-end public flow.
 

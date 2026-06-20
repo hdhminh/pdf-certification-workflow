@@ -1,0 +1,14 @@
+{
+  "name": "pdf-certification-workflow-public-blueprint",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Public-safe blueprint and reference code surface for a PDF certification and web-signing workflow.",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "lint:structure": "node -e \"console.log('Public blueprint repo: no runtime build configured.')\""
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}
