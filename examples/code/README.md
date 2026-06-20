@@ -14,5 +14,11 @@ These samples are:
 Included examples:
 
 - `apps-script-intake.example.js`
+- `apps-script-sheet-sync.example.js`
 - `browser-signing-flow.example.js`
+- `browser-export-flow.example.js`
+- `local-signing-bridge-client.example.ts`
+- `queue-row-mapper.example.ts`
+- `session-guard.example.ts`
+- `workflow-api-client.example.ts`
 - `workflow-state.example.ts`

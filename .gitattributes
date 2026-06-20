@@ -1,0 +1,14 @@
+*.md linguist-documentation=true
+docs/** linguist-documentation=true
+reference/** linguist-documentation=true
+templates/** linguist-documentation=true
+examples/contracts/** linguist-documentation=true
+LICENSE linguist-documentation=true
+NOTICE linguist-documentation=true
+SECURITY.md linguist-documentation=true
+CONTRIBUTING.md linguist-documentation=true
+
+# Keep example code counted as real source so GitHub shows languages.
+examples/code/** linguist-detectable=true
+examples/code/**/*.js linguist-language=JavaScript
+examples/code/**/*.ts linguist-language=TypeScript
